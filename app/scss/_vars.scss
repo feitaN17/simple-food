@@ -44,11 +44,9 @@ $breakpoints: (
   $b: math.div(blue($color), 255);
   $a: alpha($color);
 
-  // фолбек(fallback) на случай, если браузер не поддерживает data-url
   $lightness: lightness($color);
   filter: saturate(0%) brightness(0%) invert($lightness) opacity($a);
 
-  // фильтр цвета
   $svg-filter-id: "recolor";
   filter: url('data:image/svg+xml;utf8,\
     <svg xmlns="http://www.w3.org/2000/svg">\
