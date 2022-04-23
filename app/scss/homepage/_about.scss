@@ -1,0 +1,50 @@
+.about {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-right: 120px;
+    width: 440px;
+    height: 585px;
+  }
+
+  &__content {
+    max-width: 470px;
+  }
+
+  &__title {
+    max-width: 420px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__advantages {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      margin-right: 30px;
+      font-size: 34px;
+      vertical-align: middle;
+    }
+  }
+}

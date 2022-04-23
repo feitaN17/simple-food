@@ -1,90 +1,82 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <form class="footer__form" action="#">
+      <div class="footer__form">
         <a class="logo footer__logo" href="#">
           <img class="logo__img" src="images/icons/logo.svg" width="200" height="31" alt="logo">
         </a>
-        <div class="footer__form-item">
-          <label class="sr-only" for="email">email</label>
-          <input class="footer__form-field" id="email" type="email" placeholder="Ваш email">
-        </div>
-        <button class="btn footer__btn" type="submit">Подписаться</button>
-      </form>
+        <form class="form-subscribe" action="#">
+          <div class="form-subscribe__item">
+            <label class="sr-only" for="email">ввести email</label>
+            <input class="form-subscribe__field" id="email" type="email" name="email" required placeholder="Ваш email">
+          </div>
+          <button class="btn form-subscribe__btn" type="submit">Подписаться</button>
+        </form>
+      </div>
 
       <ul class="footer__list">
         <li class="footer__item">
           <a class="footer__link" href="#">Как это работает</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Продукты</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Блюда</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Меню</a>
         </li>
-      </ul>
-
-      <ul class="footer__list">
         <li class="footer__item">
           <a class="footer__link" href="#">О нас</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Новости</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Партнеры</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">ЧаВо</a>
         </li>
-      </ul>
-
-      <ul class="footer__list">
         <li class="footer__item">
           <a class="footer__link" href="#">Скачать приложение</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Блог</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Что нового?</a>
-        </li>
-        <li class="footer__item">
           <a class="footer__link" href="#">Карта сайта</a>
         </li>
       </ul>
 
-      <address class="address">
-        <div class="address__item">
-          <a class="address__link address__item--loc" href="#">ул. Смирнова 2/3</a>
-        </div>
-        <div class="address__item">
-          <a class="address__link address__item--tel" href="#">79068057043</a>
-        </div>
-        <div class="address__item">
-          <a class="address__link address__item--sup" href="#">support@sfood.com</a>
-        </div>
+      <address class="contacts">
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--loc" href="#">ул. Смирнова 2/3</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--tel" href="tel:79068057043">79068057043</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--sup" href="mailto:support@sfood.com">support@sfood.com</a>
+          </li>
+        </ul>
 
-        <div class="social">
-          <a class="social__link" href="#">
-            <span class="social__icon" style="background-image: url('../images/icons/icon-facebook.svg');"></span>
-          </a>
+        <ul class="social">
+          <li class="social__item">
+            <a class="social__link" target="_blank" href="#">
+              <span class="social__icon" style="background-image: url('../images/icons/icon-facebook.svg');">
+                <span class="sr-only">фейсбук</span>
+              </span>
+            </a>
+          </li>
 
-          <a class="social__link" href="#">
-            <span class="social__icon" style="background-image: url('../images/icons/icon-twitter.svg');"></span>
-          </a>
+          <li class="social__item">
+            <a class="social__link" target="_blank" href="#">
+              <span class="social__icon" style="background-image: url('../images/icons/icon-twitter.svg');">
+                <span class="sr-only">твиттер</span>
+              </span>
+            </a>
+          </li>
 
-          <a class="social__link" href="#">
-            <span class="social__icon" style="background-image: url('../images/icons/icon-instagram.svg');"></span>
-          </a>
-        </div>
+          <li class="social__item">
+            <a class="social__link" target="_blank" href="#">
+              <span class="social__icon" style="background-image: url('../images/icons/icon-instagram.svg');">
+                <span class="sr-only">инстаграм</span>
+              </span>
+            </a>
+          </li>
+        </ul>
       </address>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-bottom__copy">© 2021 Simple Food</span>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2021 Simple Food</span>
   </div>
 </footer>

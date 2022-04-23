@@ -7,25 +7,18 @@ body {
   color: $dark;
 }
 
+section {
+  padding-bottom: 120px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.header {
-  color: $dark;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-}
-
 .main {
   flex-grow: 1;
-}
-
-.footer {
-  flex-shrink: 0;
 }
 
 .sr-only {
@@ -65,17 +58,23 @@ body {
   background-color: $orange-900;
   color: $white;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  &:focus {
-    background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
     color: $orange-900;
   }
+
+  &:focus,
+  &:active {
+    background-color: rgba($orange-800, 0.1);
+  }
+
   &:hover {
     background-color: $white;
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    color: $orange-900;
   }
+
   &:active {
-    background-color: #fff2ed;
+    background-color: rgba($orange-800, 0.1);
   }
 }

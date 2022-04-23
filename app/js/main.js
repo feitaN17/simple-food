@@ -1,3 +1,3 @@
 $(function () {
-  var mixer = mixitup(".carts");
+  var mixer = mixitup(".cards");
 });
