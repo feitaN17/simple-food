@@ -1,12 +1,22 @@
 @import "reset";
 @import "fonts";
 @import "vars";
-@import "mixins";
-@import "iconsfont";
 @import "global";
-@import "components/header";
-@import "homepage/delivery";
-@import "homepage/catigories";
-@import "homepage/about";
+@import "mixins";
 
+// ---libs---
+@import "../../node_modules/swiper/swiper-bundle.min";
+
+// ---home page---
+@import "home-page/delivery";
+@import "home-page/popular-catigories";
+@import "home-page/about";
+@import "home-page/restaurants";
+@import "home-page/reviews";
+@import "components/apps";
+
+// ---components---
+@import "components/header";
 @import "components/footer";
+@import "components/product-card";
+@import "components/contacts";

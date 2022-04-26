@@ -1,0 +1,104 @@
+.restaurants {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(400px, 1fr);
+    gap: 30px;
+  }
+
+  &__card {
+    border-radius: 10px;
+    background-color: $white;
+    box-shadow: 0 3px 3px rgba($black, 0.1);
+    transition: box-shadow 0.3s;
+    height: 100%;
+
+    &:hover {
+      box-shadow: 0 3px 15px rgba($orange-800, 0.5);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__img {
+    display: inline-block;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 15px;
+    max-width: 370px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 400;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 23px 20px;
+  }
+
+  &__time {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  &__btn {
+    width: 80px;
+    border-radius: 20px;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 13px;
+      background-image: url("../../images/restaurants/arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        @include recolor($orange-900);
+        transform: translate(90%, -50%);
+      }
+    }
+
+    &:focus {
+      &::after {
+        @include recolor($orange-900);
+      }
+    }
+  }
+}
+
+.icon-cardtimer::before {
+  margin-right: 12px;
+  font-size: 20px;
+  vertical-align: middle;
+}

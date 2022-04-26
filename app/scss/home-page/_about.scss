@@ -1,0 +1,78 @@
+.about {
+  &__inner {
+    max-width: 1030px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-right: 120px;
+    width: 440px;
+    height: 585px;
+  }
+
+  &__content {
+    max-width: 470px;
+  }
+
+  &__title {
+    max-width: 420px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    p:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__advantages {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+    padding-left: 64px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      @include pseudo;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 34px;
+      height: 34px;
+      left: 0;
+      top: 0;
+    }
+
+    &--timer {
+      &::before {
+        background-image: url("../images/about/icon-timer.svg");
+      }
+    }
+
+    &--delivery {
+      &::before {
+        background-image: url("../images/about/icon-delivery.svg");
+      }
+    }
+
+    &--resturent {
+      &::before {
+        background-image: url("../images/about/icon-resturent.svg");
+      }
+    }
+  }
+}

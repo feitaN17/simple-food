@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Food</title>
+  <title>Simple Food - Доставка еды | Главная страница</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -14,17 +16,23 @@
     @include('components/_header.html')
 
     <main class="main">
-      @include('homepage/_delivery.html')
+      <h1 class="sr-only">Сервис доставки еды</h1>
+      @include('home-page/_delivery.html')
 
-      @include('homepage/_catigories.html')
+      @include('home-page/_popular-catigories.html')
 
-      @include('homepage/_about.html')
+      @include('home-page/_about.html')
+
+      @include('home-page/_restaurants.html')
+
+      @include('home-page/_reviews.html')
+
+      @include('components/_apps.html')
     </main>
 
     @include('components/_footer.html')
   </div>
 
-  <script src="js/mixitup.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
 

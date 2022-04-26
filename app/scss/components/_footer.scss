@@ -20,12 +20,12 @@
     display: block;
   }
 
-  &__list {
+  &__links {
     display: flex;
     margin-right: 70px;
   }
 
-  &__item {
+  &__list {
     max-width: 200px;
 
     &:not(:last-child) {
@@ -33,9 +33,17 @@
     }
   }
 
+  &__item {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
   &__link {
     transition: color 0.3s, box-shadow 0.3s;
-    display: block;
+    display: inline-block;
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -88,10 +96,13 @@
       box-shadow: 0 0 0 2px $orange-900;
     }
 
-    &:hover::placeholder {
-      color: $darkBlue-900;
+    &:hover {
+      &::placeholder {
+        color: $darkBlue-900;
+      }
     }
   }
+
   &__btn {
     display: inline-block;
     width: 100%;
@@ -113,132 +124,16 @@
       height: 16px;
     }
 
-    &:focus::before {
-      @include recolor($orange-900);
-    }
-
-    &:hover::before {
-      @include recolor($orange-900);
-    }
-  }
-}
-
-.contacts {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 2;
-
-  &__list {
-    margin-bottom: 15px;
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__link {
-    padding-left: 30px;
-    position: relative;
-    transition: color 0.3s, box-shadow 0.3s;
-
-    &::after {
-      @include pseudo;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center center;
-      left: 0;
-      top: 0;
-    }
-
     &:focus {
-      box-shadow: 0 0 0 2px rgba($orange-800, 0.7);
-      border-radius: 5px;
-    }
-
-    &:hover {
-      color: $orange-900;
-    }
-
-    &:active {
-      text-shadow: 2px 2px 5px rgba($dark, 0.5);
-    }
-  }
-
-  &__link--loc {
-    &::after {
-      background-image: url("../images/icons/icon-location.svg");
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  &__link--tel {
-    &::after {
-      background-image: url("../images/icons/icon-calling.svg");
-      width: 19px;
-      height: 19px;
-    }
-  }
-
-  &__link--sup {
-    &::after {
-      background-image: url("../images/icons/icon-message.svg");
-      width: 20px;
-      height: 18px;
-    }
-  }
-}
-
-.social {
-  display: flex;
-
-  &__item:not(:last-child) {
-    margin-right: 13px;
-  }
-
-  &__link {
-    position: relative;
-    display: block;
-    width: 39px;
-    height: 39px;
-    border-radius: 50%;
-    background-color: $silver-200;
-    transition: background-color 0.3s;
-
-    &:focus {
-      background-color: rgba($lowGray, 0.1);
-      box-shadow: 0 0 0 2px rgba($orange-800, 0.7);
-    }
-
-    &:hover {
-      background-color: $orange-900;
-
-      .social__icon {
-        @include recolor($white);
-      }
-    }
-
-    &:active {
-      background-color: $lowGray;
-
-      .social__icon {
+      &::before {
         @include recolor($orange-900);
       }
     }
-  }
 
-  &__icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    width: 21px;
-    height: 20px;
+    &:hover {
+      &::before {
+        @include recolor($orange-900);
+      }
+    }
   }
 }

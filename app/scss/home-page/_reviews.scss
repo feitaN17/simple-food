@@ -1,0 +1,163 @@
+.reviews {
+  text-align: center;
+  padding-bottom: 115px;
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    max-width: 300px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 40px;
+  }
+
+  &__content {
+    max-width: 650px;
+    padding: 0 40px;
+    position: relative;
+    text-align: left;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      width: 24px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &::before {
+      background-image: url("../images/reviews/quot-1.svg");
+      left: 0;
+      top: 0;
+    }
+
+    &::after {
+      background-image: url("../images/reviews/quot-2.svg");
+      right: 0;
+      bottom: 90px;
+    }
+  }
+
+  &__text {
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-style: normal;
+    display: block;
+    font-weight: 500;
+    line-height: 1.3;
+    color: $orange-900;
+    margin-bottom: 15px;
+  }
+
+  &__about {
+    display: block;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  &__nav {
+    position: relative;
+    max-width: 220px;
+    padding-bottom: 90px;
+    margin: 0 auto;
+  }
+}
+
+.swiper {
+  max-width: 990px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  margin: 0;
+  background-color: $gray;
+  width: 15px;
+  height: 15px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  outline: transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange-900;
+  }
+
+  &:hover {
+    background-color: $orange-100;
+    box-shadow: 0 0 0 2px rgba($orange-800, 0.7);
+  }
+
+  &:active {
+    background-color: $orange-700;
+    box-shadow: none;
+  }
+
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $orange-900;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  bottom: 0;
+  transform: translateY(70%);
+  width: 34px;
+  height: 34px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($orange-800, 0.7);
+  }
+
+  &:hover {
+    background-color: $orange-100;
+    border: 3px solid $orange-700;
+
+    &::after {
+      color: $orange-700;
+    }
+  }
+
+  &:active {
+    background-color: $orange-100;
+    border: 3px solid $orange-100;
+    box-shadow: none;
+
+    &::after {
+      color: $orange-800;
+    }
+  }
+
+  &::after {
+    font-size: 18px;
+    color: $gray;
+    transition: color 0.5s;
+  }
+}

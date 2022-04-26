@@ -1,5 +1,5 @@
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
@@ -7,7 +7,7 @@ body {
   color: $dark;
 }
 
-section {
+.section {
   padding-bottom: 120px;
 }
 
@@ -38,6 +38,29 @@ section {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.logo {
+  transition: box-shadow 0.3s, opacity 0.3s;
+
+  &__img {
+    width: 200px;
+    height: 39px;
+    object-fit: contain;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
+    border-radius: 5px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .title {
