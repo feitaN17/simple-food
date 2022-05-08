@@ -1,10 +1,23 @@
 .delivery {
   padding-bottom: 115px;
 
+  @include mq("tablet") {
+    padding-bottom: 80px;
+  }
+
+  @include mq("phone") {
+    padding-bottom: 65px;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+
+    @include mq('tablet', max) {
+      padding-top: 10px;
+    }
   }
 
   &__content {
@@ -17,6 +30,14 @@
     line-height: 1.3;
     text-transform: uppercase;
     margin-bottom: 20px;
+
+    @include mq('tablet-2') {
+      font-size: 56px;
+    }
+
+    @include mq('phone') {
+      font-size: 40px;
+    }
   }
 
   &__subtitle {
@@ -26,6 +47,10 @@
 
   &__text {
     margin-bottom: 20px;
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
 
     p {
       &:not(:last-child) {
@@ -41,10 +66,19 @@
 
   &__btn {
     margin-right: 35px;
+
+    @include mq("phone") {
+      padding: 9px 24px;
+    }
   }
 
   &__link {
     text-decoration: underline;
+    transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
 
     &:focus {
       box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
@@ -64,7 +98,30 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    width: 560px;
+    max-width: 560px;
+    width: 100%;
     height: 660px;
+
+    @include mq('tablet-2', max) {
+      height: 550px;
+      z-index: -1;
+
+    }
+
+    @include mq('tablet', max) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      opacity: 0.5;
+      height: 400px;
+      max-width: 350px;
+    }
+
+    @include mq('phone') {
+      max-width: 270px;
+      height: 310px;
+    }
   }
 }

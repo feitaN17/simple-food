@@ -3,6 +3,20 @@
   font-size: 16px;
   line-height: 2;
 
+  &--subcon {
+    display: none;
+
+    @include mq("tablet-2") {
+      display: block;
+    }
+  }
+
+  &--footer {
+    @include mq("tablet-2") {
+      display: none;
+    }
+  }
+
   &__list {
     margin-bottom: 15px;
   }
@@ -48,19 +62,19 @@
 
     &--loc {
       &::after {
-        background-image: url("../images/icons/icon-location.svg");
+        background-image: url("../img/icons/icon-location.svg");
       }
     }
 
     &--tel {
       &::after {
-        background-image: url("../images/icons/icon-calling.svg");
+        background-image: url("../img/icons/icon-calling.svg");
       }
     }
 
     &--sup {
       &::after {
-        background-image: url("../images/icons/icon-message.svg");
+        background-image: url("../img/icons/icon-message.svg");
       }
     }
   }
@@ -76,8 +90,9 @@
   }
 
   &__link {
-    position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 39px;
     height: 39px;
     border-radius: 50%;
@@ -107,15 +122,12 @@
   }
 
   &__icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     display: block;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    width: 21px;
-    height: 20px;
+    background-size: cover;
+    background-position: center;
+    width: 26px;
+    height: 22px;
+    @include recolor($dark);
   }
 }

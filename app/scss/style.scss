@@ -1,11 +1,9 @@
 @import "reset";
 @import "fonts";
 @import "vars";
-@import "global";
 @import "mixins";
-
-// ---libs---
-@import "../../node_modules/swiper/swiper-bundle.min";
+@import "libs";
+@import "global";
 
 // ---home page---
 @import "home-page/delivery";
@@ -19,4 +17,5 @@
 @import "components/header";
 @import "components/footer";
 @import "components/product-card";
+@import "components/best-card";
 @import "components/contacts";

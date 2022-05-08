@@ -6,21 +6,39 @@
   position: $pos;
 }
 
-$breakpoints: (
-  "phone": 560px,
+$breakpoints: ("phone": 560px,
   "tablet": 768px,
   "tablet-2": 992px,
   "desktop": 1230px,
 );
-@mixin mq($width, $type: min) {
+
+@mixin mq($width, $type: max) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
-    @if $type == max {
+
+    @if $type==min {
       $width: $width - 1px;
     }
+
     @media only screen and (#{$type}-width: $width) {
       @content;
     }
+  }
+}
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+  $padding: unquote(($y / $x) * 100 + '%');
+
+  @if $pseudo {
+    &::before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  }
+
+  @else {
+    padding-top: $padding;
   }
 }
 
@@ -29,7 +47,9 @@ $breakpoints: (
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+  @else {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

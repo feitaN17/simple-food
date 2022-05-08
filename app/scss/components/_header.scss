@@ -3,32 +3,127 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.2;
+  padding-bottom: 164px;
+
+  @include mq("tablet-2") {
+    padding-bottom: 96px;
+  }
+
+  &__menu {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 60px 0;
+    transition: padding 0.3s, box-shadow 0.3s;
+    z-index: 40;
+    background-color: $silver-100;
+
+    @include mq('tablet-2', max) {
+      padding: 20px 0;
+    }
+
+    &--fixed {
+      padding: 15px 0;
+      box-shadow: 0px -10px 45px 0px #000;
+    }
+  }
 }
 
 .menu {
-  padding: 60px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
+
+
   &__inner {
-    display: flex;
-    align-items: center;
+
+    &--logo {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 35px 0;
+      width: 200px;
+
+      @media (max-width: 350px) {
+        width: 150px;
+      }
+    }
+
+    &--menu {
+      display: none;
+    }
+
+    @include mq('tablet-2', max) {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: $white;
+      display: block;
+      text-align: left;
+      width: 80%;
+      height: 100vh;
+      transform: translateX(-200%);
+      transition: transform 0.3s;
+      overflow: auto;
+      z-index: 999;
+    }
+
+    &--open {
+      @include mq('tablet-2', max) {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__list {
     display: flex;
     margin-right: 50px;
+
+    @include mq('tablet-2', max) {
+      display: block;
+      margin-right: 0;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-top: 1px solid #EEEFF3;
+      border-bottom: 1px solid #EEEFF3;
+      margin-bottom: 15px;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: 45px;
+
+      @include mq('tablet-2', max) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+
+
+    &:nth-child(4) {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__adr {
+    display: none;
+
+    @include mq('tablet-2', max) {
+      display: block;
     }
   }
 
   &__link {
-    transition: color 0.3s, box-shadow 0.3s;
+    transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+
+    @include mq('tablet-2', max) {
+      display: block;
+      padding: 10px 0;
+    }
 
     &:focus {
       box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
@@ -44,14 +139,112 @@
       text-shadow: 2px 2px 5px rgba($dark, 0.5);
     }
   }
+
+  &__btn {
+    display: none;
+    transition: top 0.3s;
+
+    @include mq('tablet-2', max) {
+      position: absolute;
+      right: 30px;
+      top: 24px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      z-index: 6;
+    }
+  }
+
+  &__btn2 {
+    display: none;
+
+    @include mq('tablet-2', max) {
+      position: absolute;
+      right: 25px;
+      top: 35px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      z-index: 6;
+    }
+
+    @include mq("tablet") {
+      top: 30px;
+    }
+
+    .menu__line {
+      @include mq('tablet-2', max) {
+        background: transparent;
+      }
+
+      &::before {
+        @include mq('tablet-2', max) {
+          top: 0;
+          transform: rotateZ(-45deg);
+        }
+      }
+
+      &::after {
+        @include mq('tablet-2', max) {
+          top: 0;
+          transform: rotateZ(45deg);
+        }
+      }
+    }
+
+  }
+
+  &__line {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      left: 0;
+
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &__line,
+  &__line::before,
+  &__line::after {
+    left: 0;
+    height: 2px;
+    width: 30px;
+    background-color: $dark;
+    border-radius: 20px;
+    position: absolute;
+
+  }
 }
 
 .user-nav {
   display: flex;
 
+  @include mq('tablet-2', max) {
+    padding-right: 50px;
+  }
+
   &__item {
+
     &:not(:last-child) {
       margin-right: 13px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 0;
+
+      @include mq('tablet-2', max) {
+        margin-right: 13px;
+      }
     }
   }
 
@@ -60,7 +253,32 @@
     height: 44px;
     border-radius: 5px;
     position: relative;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.5s, box-shadow 0.3s;
+
+    &::before {
+      @include pseudo;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--search {
+      &::before {
+        background-image: url("../img/icons/icon-search.svg");
+      }
+    }
+
+    &--cart {
+      &::before {
+        background-image: url("../img/icons/icon-cart.svg");
+      }
+    }
 
     &:focus {
       box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
@@ -70,46 +288,27 @@
     &:hover {
       background-color: $orange-900;
 
-      .user-nav__icon {
-        @include recolor($white);
-      }
-
       .user-nav__num {
         background-color: $white;
         color: $orange-900;
+      }
+
+      &::before {
+        @include recolor($white);
       }
     }
 
     &:active {
       background-color: $orange-100;
 
-      .user-nav__icon {
+      &::before {
         @include recolor($darkBlue-900);
       }
+
     }
   }
 
-  &__icon {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0;
-    line-height: 0;
-  }
 
-  &__icon--search {
-    background-image: url("../images/icons/icon-search.svg");
-  }
-
-  &__icon--cart {
-    background-image: url("../images/icons/icon-cart.svg");
-  }
 
   &__num {
     position: absolute;

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Food - Доставка еды | Главная страница</title>
-  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="img/favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -17,6 +17,7 @@
 
     <main class="main">
       <h1 class="sr-only">Сервис доставки еды</h1>
+
       @include('home-page/_delivery.html')
 
       @include('home-page/_popular-catigories.html')
@@ -26,9 +27,9 @@
       @include('home-page/_restaurants.html')
 
       @include('home-page/_reviews.html')
-
-      @include('components/_apps.html')
     </main>
+
+    @include('components/_apps.html')
 
     @include('components/_footer.html')
   </div>

@@ -8,33 +8,78 @@
   &__inner {
     padding-bottom: 60px;
     display: flex;
+
+    @include mq("tablet-2") {
+      flex-direction: column;
+    }
+
+    @include mq("phone") {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__sub-con {
+    display: flex;
+
+    @include mq("tablet-2") {
+      margin-bottom: 30px;
+    }
+
+    @include mq("phone") {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 
   &__form {
     max-width: 200px;
     margin-right: 70px;
-  }
 
-  &__logo {
-    margin-bottom: 30px;
-    display: block;
-  }
-
-  &__links {
-    display: flex;
-    margin-right: 70px;
-  }
-
-  &__list {
-    max-width: 200px;
-
-    &:not(:last-child) {
-      margin-right: 70px;
+    @include mq("phone") {
+      margin-right: 0;
+      margin-bottom: 30px;
     }
   }
 
-  &__item {
+  &__logo {
+    padding-top: 8px;
+    margin-bottom: 40px;
+    display: block;
+    width: 200px;
+
+    @include mq("phone") {
+      padding-top: 0;
+    }
+  }
+
+  &__links {
+    column-count: 3;
+    margin-right: 70px;
+
+    @include mq("phone") {
+      column-count: 1;
+    }
+  }
+
+  &__links-item {
+    max-width: 200px;
     width: 100%;
+
+    &:not(:last-child) {
+
+      @include mq("phone") {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__list {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  &__item {
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -42,7 +87,7 @@
   }
 
   &__link {
-    transition: color 0.3s, box-shadow 0.3s;
+    transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
     display: inline-block;
 
     &:not(:last-child) {
@@ -73,6 +118,7 @@
 }
 
 .form-subscribe {
+
   &__item {
     margin-bottom: 12px;
   }
@@ -111,10 +157,11 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.3;
+    overflow: hidden;
 
     &::before {
       @include pseudo;
-      background-image: url("../images/icons/icon-btn.svg");
+      background-image: url("../img/icons/icon-btn.svg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
