@@ -7,7 +7,7 @@ $(function () {
       $('.menu__btn').css('top', '30px')
     } else {
       $('.header__menu').addClass('header__menu--fixed')
-      $('.menu__btn').css('top', '20px')
+      $('.menu__btn').css('top', '24px')
     }
   })
 
