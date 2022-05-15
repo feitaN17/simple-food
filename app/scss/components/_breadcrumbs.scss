@@ -1,0 +1,47 @@
+.breadcrumbs {
+  background-color: rgba($orange-700, 0.1);
+  padding: 24px 0;
+  margin-bottom: 60px;
+
+  @include mq("tablet-2") {
+    margin-bottom: 55px;
+  }
+
+  @include mq("tablet") {
+    margin-bottom: 45px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    overflow: auto;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $darken;
+    position: relative;
+
+    &:not(:last-child) {
+      padding-right: 17px;
+
+      &::after {
+        @include pseudo;
+        background-image: url('../img/sprite.svg#icon-chevron');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 6px;
+        height: 10px;
+        right: 4px;
+        top: 4px;
+        @include recolor($silver-300);
+      }
+    }
+  }
+}

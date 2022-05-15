@@ -5,7 +5,7 @@
 @import "libs";
 @import "global";
 
-// ---home page---
+// ---main pages---
 @import "home-page/delivery";
 @import "home-page/popular-catigories";
 @import "home-page/about";
@@ -13,9 +13,14 @@
 @import "home-page/reviews";
 @import "components/apps";
 
+// ---catalog---
+@import "catalog/products-catalog";
+@import "catalog/discounts";
+
 // ---components---
 @import "components/header";
 @import "components/footer";
+@import "components/breadcrumbs";
 @import "components/product-card";
 @import "components/best-card";
 @import "components/contacts";

@@ -1,16 +1,7 @@
-.best-restaurants {
-  text-align: center;
+.discounts {
 
   @include mq("phone") {
-    padding-bottom: 25px;
-  }
-
-  &__title {
-    margin-bottom: 45px;
-
-    @include mq("phone") {
-      margin-bottom: 30px;
-    }
+    padding-bottom: 40px;
   }
 
   &__list {
@@ -20,20 +11,12 @@
     gap: 30px;
 
     @include mq("tablet-2") {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include mq("tablet") {
       display: none;
     }
   }
-
-  &__item {
-    justify-self: center;
-  }
 }
 
-.restaurants-swiper {
+.discounts-swiper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -43,7 +26,7 @@
   z-index: 1;
   display: none;
 
-  @include mq("tablet") {
+  @include mq("tablet-2") {
     display: block;
   }
 
@@ -54,5 +37,4 @@
   &__slide {
     max-width: 370px;
   }
-
 }

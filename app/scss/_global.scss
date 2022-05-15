@@ -105,6 +105,8 @@ body {
   &:active {
     opacity: 0.5;
   }
+
+
 }
 
 .title {
@@ -127,6 +129,14 @@ body {
   @include mq('phone') {
     font-size: 24px;
     margin-bottom: 30px;
+  }
+
+  &--catalog {
+    margin-bottom: 0;
+
+    @include mq("tablet") {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -158,5 +168,132 @@ body {
 
   &:hover {
     background-color: $white;
+  }
+}
+
+.catalog-btn {
+  display: none;
+
+  @include mq("tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47px;
+    height: 47px;
+    background-color: #FAEDED;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+
+  &::before {
+    @include pseudo;
+    background-image: url('../img/sprite.svg#icon-catalog-btn');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 36px;
+    @include recolor($orange-900);
+  }
+
+  &.catalog-btn--open {
+    &::before {
+      background-image: url('../img/sprite.svg#icon-close');
+      width: 18px;
+      height: 18px;
+      @include recolor($darkBlue-900);
+    }
+  }
+
+  &--open {
+    @include mq("tablet") {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      margin-right: 0;
+    }
+  }
+
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+
+
+  &__arrows {
+    width: 48px;
+    height: 48px;
+    background: #FAEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+
+    &::after {
+      @include pseudo;
+      background-image: url('../img/sprite.svg#icon-chevron');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      width: 11px;
+      height: 18px;
+    }
+
+    &--active {
+      &::after {
+        @include recolor(#C2C2C2);
+      }
+    }
+  }
+
+
+  &__prev {
+    margin-right: 6px;
+
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+    background: #FAEDED;
+    margin-right: 6px;
+    border-radius: 3px;
+
+    &:nth-child(2) {
+      @include mq("phone") {
+        display: none;
+      }
+    }
+
+    &:nth-last-child(2) {
+      @include mq("phone") {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    background: #FAEDED;
+    border-radius: 3px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--active {
+      border: 1px solid #363853;
+    }
   }
 }

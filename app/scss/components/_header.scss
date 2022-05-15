@@ -6,7 +6,7 @@
   padding-bottom: 164px;
 
   @include mq("tablet-2") {
-    padding-bottom: 96px;
+    padding-bottom: 84px;
   }
 
   &__menu {
@@ -25,7 +25,7 @@
 
     &--fixed {
       padding: 15px 0;
-      box-shadow: 0px -10px 45px 0px #000;
+      box-shadow: 0px -35px 45px 0px #000;
     }
   }
 }
@@ -33,8 +33,6 @@
 .menu {
   display: flex;
   align-items: center;
-
-
 
   &__inner {
 
@@ -53,7 +51,7 @@
       display: none;
     }
 
-    @include mq('tablet-2', max) {
+    @include mq('tablet-2') {
       position: fixed;
       left: 0;
       right: 0;
@@ -70,7 +68,7 @@
     }
 
     &--open {
-      @include mq('tablet-2', max) {
+      @include mq('tablet-2') {
         transform: translateX(0);
       }
     }
@@ -80,7 +78,7 @@
     display: flex;
     margin-right: 50px;
 
-    @include mq('tablet-2', max) {
+    @include mq('tablet-2') {
       display: block;
       margin-right: 0;
       padding-top: 25px;
@@ -95,7 +93,7 @@
     &:not(:last-child) {
       margin-right: 45px;
 
-      @include mq('tablet-2', max) {
+      @include mq('tablet-2') {
         margin-right: 0;
         margin-bottom: 10px;
       }
@@ -112,7 +110,7 @@
   &__adr {
     display: none;
 
-    @include mq('tablet-2', max) {
+    @include mq('tablet-2') {
       display: block;
     }
   }
@@ -120,7 +118,7 @@
   &__link {
     transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
 
-    @include mq('tablet-2', max) {
+    @include mq('tablet-2') {
       display: block;
       padding: 10px 0;
     }
