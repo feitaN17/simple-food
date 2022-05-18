@@ -13,3 +13,11 @@ $blue: #00AAFF;
 $red: #FF2222;
 $dark: #31352b;
 $darken: #505050;
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

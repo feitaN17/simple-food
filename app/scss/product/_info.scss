@@ -1,0 +1,316 @@
+.info {
+  padding-top: 30px;
+}
+
+.tabs {
+  max-width: 690px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    margin-bottom: 30px;
+    overflow: auto;
+
+    &-item {
+      display: flex;
+      cursor: pointer;
+      font-size: 24px;
+
+      @include mq("tablet") {
+        font-size: 22px;
+      }
+
+      @include mq("phone") {
+        font-size: 20px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 60px;
+
+        @include mq("tablet") {
+          margin-right: 45px;
+        }
+
+        @include mq("phone") {
+          margin-right: 30px;
+        }
+      }
+
+      &.active {
+        color: $orange-900;
+      }
+
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__content-item {
+    flex-direction: column;
+  }
+
+  &__text {
+    opacity: 0.9;
+
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+
+    @include mq("phone") {
+      font-size: 16px;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+
+        @include mq("phone") {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  &__property {
+    font-weight: 500;
+    display: block;
+
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+
+    @include mq("phone") {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__property-info {
+    font-weight: 400;
+  }
+
+  &__reviews {
+    margin-bottom: 60px;
+
+    @include mq("tablet") {
+      margin-bottom: 50px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__reviews-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $darkBlue-900;
+    margin-bottom: 30px;
+
+    @include mq("phone") {
+      font-size: 20px;
+    }
+  }
+
+  &__reviews-item {
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid #E4E4E4;
+      padding-top: 25px;
+    }
+  }
+
+  &__reviews-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include mq("phone") {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__reviews-box {
+    align-items: center;
+    display: flex;
+    margin-right: auto;
+
+    @include mq("phone") {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__reviews-avatar {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 25px;
+  }
+
+  &__reviews-info {
+    margin-right: auto;
+  }
+
+  &__reviews-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #505050;
+    margin-bottom: 10px;
+  }
+
+  &__reviews-date {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
+
+  &__reviews-text {
+    color: #505050;
+
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+
+    @include mq("phone") {
+      font-size: 16px;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.send-review {
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #505050;
+
+    span {
+      margin-right: 15px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include mq("phone") {
+      flex-direction: column;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      color: #505050;
+    }
+  }
+
+  &__textarea {
+    max-width: 400px;
+    width: 100%;
+    margin-right: 30px;
+
+    @include mq("phone") {
+      margin-right: 0;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    input {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+
+        @include mq("phone") {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__field {
+    background-color: $white;
+    border: 1px solid #C2C2C2;
+    border-radius: 5px;
+    width: 100%;
+    padding: 17px 18px;
+    font-size: 16px;
+    line-height: 1.3;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1.3;
+      color: #C1C1C1;
+    }
+
+    &--textarea {
+      resize: none;
+      height: 165px;
+    }
+  }
+
+  &__check {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #505050;
+    margin-bottom: 30px;
+  }
+
+  &__checkbox {
+    min-width: 24px;
+    height: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    &:checked {
+      border: 1px solid $dark;
+
+      &::after {
+        @include pseudo;
+        background-image: url('../img/icons/icon-checked.svg');
+        width: 12px;
+        height: 12px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+  }
+}
+
+.star-sendrating {
+  margin-right: 10px;
+}

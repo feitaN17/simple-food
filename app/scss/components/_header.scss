@@ -253,6 +253,7 @@
     border-radius: 5px;
     position: relative;
     transition: background-color 0.5s, box-shadow 0.3s;
+    z-index: 15;
 
     &::before {
       @include pseudo;
@@ -303,11 +304,8 @@
       &::before {
         @include recolor($darkBlue-900);
       }
-
     }
   }
-
-
 
   &__num {
     position: absolute;
@@ -323,5 +321,45 @@
     font-size: 10px;
     line-height: 15px;
     color: $white;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+  }
+
+  &__search {
+    width: 650px;
+    padding: 15px 44px 15px 15px;
+    height: 44px;
+    font-size: 16px;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.5s;
+
+    @include mq("tablet-2") {
+      width: 300px;
+    }
+
+    @include mq("phone") {
+      width: 180px;
+    }
+
+    &--active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    &::placeholder {
+      color: $orange-700;
+    }
   }
 }

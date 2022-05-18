@@ -34,6 +34,11 @@ body {
     position: fixed;
     overflow: hidden;
     width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
 
     &::before {
       @include pseudo;
@@ -105,8 +110,6 @@ body {
   &:active {
     opacity: 0.5;
   }
-
-
 }
 
 .title {
@@ -143,7 +146,7 @@ body {
 .btn {
   font-weight: 400;
   font-size: 18px;
-  line-height: 130%;
+  line-height: 1.3;
   letter-spacing: 0.03em;
   border-radius: 5px;
   padding: 12px 32px;
@@ -216,6 +219,14 @@ body {
     }
   }
 
+}
+
+.star {
+  margin-bottom: 25px;
+
+  &--reviews {
+    margin-bottom: 0;
+  }
 }
 
 .pagination {

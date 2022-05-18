@@ -17,6 +17,11 @@
 @import "catalog/products-catalog";
 @import "catalog/discounts";
 
+// ---product---
+@import "product/product";
+@import "product/info";
+@import "product/intresting";
+
 // ---components---
 @import "components/header";
 @import "components/footer";

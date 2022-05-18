@@ -13,18 +13,19 @@
 
 <body>
   <div class="wrapper">
-    @include('catalog/_header.html')
+    @include('product/_header.html')
 
     <main class="main">
       <h1 class="sr-only">Сервис доставки еды</h1>
-      @include('catalog/_breadcrumbs.html')
+      @include('product/_breadcrumbs.html')
 
-      @include('catalog/_products-catalog.html')
+      @include('product/_product.html')
 
-      @include('components/_apps.html')
+      <div class="product-line"></div>
 
-      @include('catalog/_discounts.html')
+      @include('product/_info.html')
 
+      @include('product/_intresting.html')
     </main>
 
 

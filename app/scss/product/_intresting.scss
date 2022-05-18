@@ -1,0 +1,60 @@
+.intresting {
+  @include mq("tablet") {
+    padding-bottom: 45px;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__title {
+    @include mq("phone") {
+      font-size: 20px;
+    }
+  }
+}
+
+
+.intresting-swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 1px 1px;
+  z-index: 1;
+
+  &__wrapper {
+
+    @include mq("tablet") {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 93px;
+
+    @include mq("phone") {
+      display: none;
+    }
+  }
+
+  &__pag {
+    display: none;
+
+    @include mq("tablet") {
+      display: block;
+    }
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+  }
+}

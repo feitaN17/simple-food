@@ -64,9 +64,15 @@
 
         <ul class="user-nav">
           <li class="user-nav__item">
-            <button class="user-nav__btn user-nav__btn--search" type="button">
-              <span class="sr-only">поиск</span>
-            </button>
+            <div class="user-nav__inner">
+              <form>
+                <label class="sr-only" for="search">Начать поиск</label>
+                <input class="user-nav__search" placeholder="Поиск" type="text" value="" name="search" id="search">
+                <button class="user-nav__btn user-nav__btn--search" type="button">
+                  <span class="sr-only">поиск</span>
+                </button>
+              </form>
+            </div>
           </li>
 
           <li class="user-nav__item">
